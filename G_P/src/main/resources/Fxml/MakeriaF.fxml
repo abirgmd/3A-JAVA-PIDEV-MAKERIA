@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.geometry.Pos?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.MainController"
+      prefWidth="1200" prefHeight="600"
+      stylesheets="@../css/style.css"
+      style="-fx-font-family: 'Joti One';">
+
+    <!-- Top Section with Logo, Search, and Auth -->
+    <HBox style="-fx-background-color: #faeff6; -fx-padding: 10 20;" spacing="20" stylesheets="@../css/style.css" alignment="CENTER">
+        <!-- Logo Section -->
+        <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <Text text="Make" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #040015;"/>
+            <Text text="Ria" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #b11d85;"/>
+        </HBox>
+
+        <!-- Search Section -->
+        <HBox alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
+            <TextField fx:id="searchField" promptText="Search..." prefWidth="300"
+                      style="-fx-background-color: white; -fx-border-color: #b11d85; -fx-border-radius: 20; -fx-background-radius: 20;"/>
+            <Button fx:id="searchButton" text="Go!"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-background-radius: 20;"/>
+        </HBox>
+
+        <!-- Auth Buttons -->
+        <HBox alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="ALWAYS">
+            <Button fx:id="loginButton" text="Login"
+                    style="-fx-background-color: transparent; -fx-text-fill: #3a2e75; -fx-border-color: #3a2e75; -fx-border-radius: 20;"/>
+            <Button fx:id="registerButton" text="Sign Up"
+                    style="-fx-background-color: #3a2e75; -fx-text-fill: white; -fx-background-radius: 20;"/>
+        </HBox>
+    </HBox>
+
+    <HBox style="-fx-background-color: #ae8f02; -fx-padding: 10 20;" spacing="20" alignment="CENTER">
+        <Button fx:id="homeButton" text="Home" onAction="#onHomeClicked"
+                style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14;"/>
+
+        <MenuButton fx:id="productsMenu" text="Products"
+                    style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14;">
+            <items>
+                <MenuItem text="All Products" style="-fx-background-color: transparent; -fx-text-fill: black;"/>
+            </items>
+        </MenuButton>
+
+
+        <MenuButton fx:id="eventsMenu" text="Events"
+                    style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14;">
+            <items>
+                <MenuItem text="All events"/>
+            </items>
+        </MenuButton>
+        <MenuButton fx:id="forumMenu" text="Forum"
+                    style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14;">
+            <items>
+                <MenuItem text="message" style="-fx-background-color: transparent; -fx-text-fill: black;"/>
+                <MenuItem text="replys" style="-fx-background-color: transparent; -fx-text-fill: black;"/>
+            </items>
+        </MenuButton>
+        <MenuButton fx:id="reclamationMenu" text="Reclamation"
+                    style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14;">
+            <items>
+                <MenuItem text="Add Reclamation" style="-fx-background-color: transparent; -fx-text-fill: black;"/>
+                <MenuItem text="My Reclamations" style="-fx-background-color: transparent; -fx-text-fill: black;"/>
+            </items>
+        </MenuButton>
+
+        <Button fx:id="cartButton" text="🛒"
+                style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 18;"/>
+    </HBox>
+
+    <!-- Main Content Area -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                style="-fx-background: transparent; -fx-background-color: transparent;" stylesheets="@../css/style.css">
+        <StackPane fx:id="contentPane" style="-fx-background-color: white;">
+            <!-- Content will be loaded here dynamically -->
+        </StackPane>
+    </ScrollPane>
+
+    <!-- Footer -->
+    <VBox style="-fx-background-color: #b11d85; -fx-padding: 20;" stylesheets="@../css/style.css" >
+        <Text text="© 2024 Makeria. All rights reserved"
+              style="-fx-fill: white; -fx-font-size: 12;"/>
+    </VBox>
+</VBox>

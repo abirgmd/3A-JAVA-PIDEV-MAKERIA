@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abircode.cruddp.Controller.ProduitController">
+
+    <children>
+
+        <!-- Sidebar -->
+            <VBox layoutX="0.0" layoutY="0.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #eeeeee; -fx-padding: 10; -fx-background-color: #0A2647;" stylesheets="@../css/style.css">
+                <Label styleClass="text-1" stylesheets="@../css/style.css" prefWidth="200.0"  text="MAKERIA" />
+
+                <children>
+
+                    <Button onAction="#showProduitsPane" prefWidth="180" text="Produit" />
+                    <Button onAction="#showCategoriesPane" prefWidth="180" text="Catégories" />
+                    <Button onAction="#showEvaluationsPane" prefWidth="180" text="Évaluations" />
+                    <Button onAction="#showeventPane" prefWidth="180" text="Event" />
+                    <Button onAction="#showCommentPane" prefWidth="180" text="Comment" />
+                    <Button onAction="#showForumPane" prefWidth="180" text="Afficher Forum" />
+                    <Button onAction="#addMessage" prefWidth="180" text="Ajouter message" />
+                    <Button onAction="#showReclamationPane" prefWidth="180" text="Reclamation" />
+                    <Button onAction="#showReponsesPane" prefWidth="180" text="Reponses" />
+                </children>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="column-header" />
+            <String fx:value="button" />
+            <String fx:value="active" />
+            <String fx:value="text-label" />
+            <String fx:value="vbox-sidebar" />
+         </styleClass>
+            </VBox>
+
+
+        <!-- Zone de contenu dynamique -->
+        <StackPane fx:id="contentPane" layoutX="200.0" layoutY="0.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;">
+        </StackPane>
+    </children>
+   <styleClass>
+      <String fx:value="button" />
+      <String fx:value="column-header" />
+      <String fx:value="grid-pane" />
+      <String fx:value="nav-bar" />
+      <String fx:value="active" />
+      <String fx:value="vbox-sidebar" />
+      <String fx:value="text-label" />
+      <String fx:value="table-view" />
+      <String fx:value="table-row-cell" />
+      <String fx:value="table-cell" />
+      <String fx:value="filler" />
+      <String fx:value="column-header-background" />
+   </styleClass>
+</AnchorPane>

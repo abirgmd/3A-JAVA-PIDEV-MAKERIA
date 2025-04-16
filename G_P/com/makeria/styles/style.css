@@ -1,0 +1,135 @@
+/* Global Styles */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+/* TextField Styles */
+.text-field {
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4px;
+}
+
+.text-field:focused {
+    -fx-border-color: #731000;
+}
+
+/* MenuButton Styles */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+}
+
+.menu-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.menu-item {
+    -fx-padding: 8px 16px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Product Card Styles */
+.product-card {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-background-radius: 8px;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 0);
+}
+
+/* Navigation Styles */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+.nav-button:hover {
+    -fx-text-fill: #731000;
+}
+
+/* Footer Styles */
+.footer-text {
+    -fx-fill: white;
+    -fx-font-size: 14px;
+}
+
+.footer-link {
+    -fx-text-fill: white;
+    -fx-underline: false;
+}
+
+.footer-link:hover {
+    -fx-text-fill: #FF2400;
+}
+
+/* Social Media Button Styles */
+.social-button {
+    -fx-background-radius: 50%;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-font-size: 14px;
+}
+
+/* ScrollPane Styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #731000;
+    -fx-background-radius: 4px;
+}
+
+/* ComboBox Styles */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #731000;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8px;
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4px;
+} 
