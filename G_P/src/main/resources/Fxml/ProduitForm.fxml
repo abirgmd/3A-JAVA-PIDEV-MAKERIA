@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane fx:controller="com.abircode.cruddp.Controller.ProductController"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            prefHeight="600.0" prefWidth="1200.0"
+            styleClass="main-container" >
+
+    <children>
+        <!-- Search field at the top -->
+        <TextField fx:id="searchField" promptText="Rechercher un produit..." layoutX="20.0" layoutY="20.0" prefWidth="300.0" styleClass="search-field" />
+
+        <!-- Add Product Button -->
+        <Button fx:id="addProductButton" text="Ajouter" onAction="#showAddForm" layoutX="1000.0" layoutY="20.0" styleClass="add-button" prefWidth="150.0" prefHeight="30.0" />
+
+        <!-- ScrollPane for product cards -->
+        <ScrollPane layoutX="20.0" layoutY="60.0" prefHeight="500.0" prefWidth="1150.0" styleClass="card-container">
+            <FlowPane fx:id="productCardsContainer" hgap="10" vgap="10" style="-fx-padding: 10;">
+                <!-- Product cards will be added here dynamically -->
+            </FlowPane>
+        </ScrollPane>
+
+        <!-- Form container for creating and updating products -->
+        <StackPane fx:id="formContainer" visible="false" prefHeight="600.0">
+            <!-- Add Product Form -->
+            <VBox fx:id="addProductForm" visible="false" spacing="10" styleClass="form-container">
+                <TextField fx:id="nomprod" promptText="Nom du produit" />
+                <TextField fx:id="desprod" promptText="Description" />
+                <TextField fx:id="avantages" promptText="Avantages" />
+                <TextField fx:id="image_large" promptText="Image URL" />
+                <TextField fx:id="nombre_produits_en_stock" promptText="Stock" />
+                <TextField fx:id="sizeprod" promptText="Taille" />
+                <TextField fx:id="prixprod" promptText="Prix" />
+                <ComboBox fx:id="categorieComboBox" promptText="Choisir une catégorie" />
+                <HBox spacing="10">
+                    <Button text="Ajouter" onAction="#creatProduit" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+
+            <!-- Update Product Form -->
+            <VBox fx:id="updateProductForm" visible="false" spacing="10" styleClass="form-container" prefHeight="600.0">
+                <TextField fx:id="updateNomprod" promptText="Nom du produit" />
+                <TextField fx:id="updateDesprod" promptText="Description" />
+                <TextField fx:id="updateAvantages" promptText="Avantages" />
+                <TextField fx:id="updateImageLarge" promptText="Image URL" />
+                <TextField fx:id="updateNombreProduitsEnStock" promptText="Stock" />
+                <TextField fx:id="updateSizeprod" promptText="Taille" />
+                <TextField fx:id="updatePrixprod" promptText="Prix" />
+                <ComboBox fx:id="updateCategorieComboBox" promptText="Choisir une catégorie" />
+                <HBox spacing="10">
+                    <Button text="Mettre à jour" onAction="#updateProduit" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.ReviewFormController"
+      fx:id="reviewForm"
+      spacing="20"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 20; -fx-max-height: 400;">
+    <Text text="Add a Review" styleClass="title-text">
+        <font>
+            <Font name="Joti One" size="24.0"/>
+        </font>
+    </Text>
+
+    <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                style="-fx-max-height: 400;">
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-max-height: 400;">
+            <GridPane vgap="10" hgap="10">
+                <Label text="User:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Joti One', sans-serif;"/>
+                <ComboBox fx:id="userComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          prefWidth="200"
+                          style="-fx-font-size: 14px; -fx-font-family: 'Joti One', sans-serif;"/>
+
+                <Label text="Rating (1-5):" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Joti One', sans-serif;"/>
+                <TextField fx:id="ratingInput" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                           prefWidth="200"
+                           style="-fx-font-size: 14px; -fx-font-family: 'Joti One', sans-serif;"/>
+
+                <Label text="Review:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Joti One', sans-serif;"/>
+                <TextArea fx:id="reviewTextArea" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                          prefWidth="200" prefHeight="100" maxHeight="100"
+                          style="-fx-font-size: 14px; -fx-font-family: 'Joti One', sans-serif;"/>
+
+                <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Joti One', sans-serif;"/>
+                <TextField fx:id="reviewDateField" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                           prefWidth="200" editable="false"
+                           style="-fx-font-size: 14px; -fx-font-family: 'Joti One', sans-serif;"/>
+            </GridPane>
+
+            <Button fx:id="submitReviewButton" text="Submit Review" onAction="#submitReview"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5; -fx-font-family: 'Joti One', sans-serif;"/>
+
+            <VBox fx:id="reviewsContainer" spacing="10" style="-fx-padding: 10; -fx-max-height: 400;"/>
+        </VBox>
+    </ScrollPane>
+
+</VBox>
