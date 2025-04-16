@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.DatePicker?>
+<AnchorPane fx:controller="com.abircode.cruddp.Controller.EventController"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            prefHeight="600.0" prefWidth="1200.0"
+            styleClass="main-container">
+
+    <children>
+        <!-- Button for adding event -->
+        <Button fx:id="addEventButton" text="Ajouter un événement" onAction="#showAddForm" layoutX="1000.0" layoutY="20.0" styleClass="add-button" prefWidth="150.0" prefHeight="30.0" />
+
+        <!-- ScrollPane for event cards -->
+        <ScrollPane layoutX="20.0" layoutY="60.0" prefHeight="500.0" prefWidth="1150.0" styleClass="card-container">
+            <FlowPane fx:id="eventCardsContainer" hgap="10" vgap="10" style="-fx-padding: 10;">
+                <!-- Event cards will be added here dynamically -->
+            </FlowPane>
+        </ScrollPane>
+
+        <!-- Form container for creating and updating events -->
+        <StackPane fx:id="formContainer" visible="false" prefHeight="600.0">
+            <!-- Add Event Form -->
+            <VBox fx:id="addEventForm" visible="false" spacing="10" styleClass="form-container">
+                <TextField fx:id="titreEvent" promptText="Titre" />
+                <TextField fx:id="descriptionEvent" promptText="Description" />
+                <!-- Dans votre fichier FXML -->
+
+                <DatePicker fx:id="dateDebutPicker" promptText="Date début" />
+                <DatePicker fx:id="dateFinPicker" promptText="Date fin" />
+                <TextField fx:id="image1Event" promptText="Image 1 URL" />
+                <TextField fx:id="image2Event" promptText="Image 2 URL" />
+                <HBox spacing="10">
+                    <Button text="Créer" onAction="#createEvent" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+
+            <!-- Update Event Form -->
+            <VBox fx:id="updateEventForm" visible="false" spacing="10" styleClass="form-container" prefHeight="600.0">
+                <TextField fx:id="updateTitreEvent" promptText="Titre" />
+                <TextField fx:id="updateDescriptionEvent" promptText="Description" />
+                <DatePicker fx:id="updateDateDebutPicker" promptText="Date début" />
+                <DatePicker fx:id="updateDateFinPicker" promptText="Date fin" />
+                <TextField fx:id="updateImage1Event" promptText="Image 1 URL" />
+                <TextField fx:id="updateImage2Event" promptText="Image 2 URL" />
+                <HBox spacing="10">
+                    <Button text="Modifier" onAction="#updateEvent" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>
