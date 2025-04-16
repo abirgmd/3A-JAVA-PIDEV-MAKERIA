@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.OrderInformationsController">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+            <Label text="COMMANDE" style="-fx-font-size: 22px; -fx-text-fill: #b11074; -fx-font-weight: bold;" />
+
+            <TextField fx:id="villeField" promptText="Ville" />
+            <TextField fx:id="codePostalField" promptText="Code postal" />
+            <TextField fx:id="adresseLivraisonField" promptText="Adresse livraison" />
+            <TextField fx:id="prenomField" promptText="Prénom" />
+            <TextField fx:id="nomField" promptText="Nom" />
+            <TextField fx:id="numTelField" promptText="Numéro de téléphone" />
+            <TextField fx:id="emailField" promptText="Email" />
+
+            <Button text="Enregistrer" onAction="#handleEnregistrerClick" style="-fx-background-color: #b11074; -fx-text-fill: white;" />
+        </VBox>
+    </children>
+</AnchorPane>
+

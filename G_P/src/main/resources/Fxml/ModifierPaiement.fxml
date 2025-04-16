@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.abircode.cruddp.Controller.ModifierPaiement"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox spacing="10.0" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20">
+
+        <TextField fx:id="methodeField" promptText="Méthode de Paiement"/>
+        <TextField fx:id="cardDetailsField" promptText="Détails de la Carte"/>
+        <TextField fx:id="cardNumberField" promptText="Numéro de Carte"/>
+        <TextField fx:id="expiryField" promptText="Date d'Expiration (YYYY-MM-DD)"/>
+        <TextField fx:id="cvvField" promptText="CVV"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Enregistrer" onAction="#handleSave"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            <Button text="Annuler" onAction="#handleCancel"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.abircode.cruddp.Controller.DashPaiement"
+      spacing="10" style="-fx-padding: 20;">
+
+    <Label text="Liste des Paiements" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+        <VBox fx:id="paiementContainer" spacing="15" />
+    </ScrollPane>
+</VBox>

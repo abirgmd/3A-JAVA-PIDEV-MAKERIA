@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.abircode.cruddp.Controller.PaiementController"
+            prefWidth="600.0" prefHeight="400.0">
+
+    <children>
+        <VBox alignment="TOP_LEFT" spacing="15.0" layoutX="50.0" layoutY="30.0" prefWidth="500.0">
+            <children>
+
+                <!-- Méthodes de paiement -->
+                <Label text="Méthode de Paiement :" />
+                <HBox spacing="20">
+                    <children>
+                        <RadioButton fx:id="creditCardRadio" text="Carte Crédit" toggleGroup="$paymentGroup"/>
+                        <RadioButton fx:id="debitCardRadio" text="Carte Débit" toggleGroup="$paymentGroup"/>
+                        <RadioButton fx:id="paypalRadio" text="PayPal" toggleGroup="$paymentGroup"/>
+                    </children>
+                </HBox>
+
+                <!-- Nom sur la carte -->
+                <Label text="Nom sur la carte :" />
+                <TextField fx:id="cardNameField" promptText="Entrez le nom affiché" />
+
+                <!-- Numéro de carte -->
+                <Label text="Numéro de carte :" />
+                <TextField fx:id="cardNumberField" promptText="1234 5678 9012 3456" />
+
+                <!-- Expiration -->
+                <Label text="Date d'expiration (MM/AA) :" />
+                <TextField fx:id="expiryDateField" promptText="MM/AA" />
+
+                <!-- CVV -->
+                <Label text="Code de sécurité (CVV) :" />
+                <TextField fx:id="cvvField" promptText="123" />
+
+                <!-- Bouton de paiement -->
+                <Button text="Payer" onAction="#handlePayment" />
+            </children>
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
