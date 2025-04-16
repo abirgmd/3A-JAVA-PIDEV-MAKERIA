@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class DBConnexion {
     static String user = "root";  // Change this to your MySQL username
     static String password = "";  // Change this to your MySQL password
-    static String url = "jdbc:mysql://localhost:3306/pidev";  // Using pidev database
+    static String url = "jdbc:mysql://localhost:3306/makeria";  // Using pidev database
     static String driver = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getCon() {
