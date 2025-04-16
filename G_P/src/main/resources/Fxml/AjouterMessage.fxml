@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.abircode.cruddp.Controller.AjouterMessageController"
+            prefHeight="500.0" prefWidth="700.0"
+            style="-fx-background-color: #f5f5f5;">
+
+    <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <Label text="Ajouter un Nouveau Message" style="-fx-font-size: 24px; -fx-font-weight: bold;">
+            <padding>
+                <Insets bottom="20"/>
+            </padding>
+        </Label>
+
+        <GridPane hgap="15" vgap="8" alignment="CENTER">
+            <padding>
+                <Insets left="50" right="50"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS"/>
+                <RowConstraints vgrow="ALWAYS"/>
+                <RowConstraints vgrow="ALWAYS"/>
+                <RowConstraints vgrow="ALWAYS"/>
+                <RowConstraints vgrow="NEVER"/>
+                <RowConstraints vgrow="NEVER"/>
+                <RowConstraints vgrow="NEVER"/>
+                <RowConstraints vgrow="NEVER"/>
+            </rowConstraints>
+
+            <!-- Champ Titre -->
+            <Label text="Titre:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="tf_titre" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       promptText="Entrez le titre du message" prefWidth="300"/>
+            <Label fx:id="error_titre" text="" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   style="-fx-text-fill: red;"/>
+
+            <!-- Champ Description -->
+            <Label text="Description:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="tf_description" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                       promptText="Entrez une brève description" prefWidth="300"/>
+            <Label fx:id="error_description" text="" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                   style="-fx-text-fill: red;"/>
+
+            <!-- Champ Contenu -->
+            <Label text="Contenu:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="ta_contenu" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                      promptText="Saisissez le contenu du message" prefWidth="300" prefHeight="150" wrapText="true"/>
+            <Label fx:id="error_contenu" text="" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                   style="-fx-text-fill: red;"/>
+
+        </GridPane>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Ajouter" onAction="#AjouterMessage"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                    prefWidth="120" prefHeight="35"/>
+        </HBox>
+
+        <Label text="* Champs obligatoires" style="-fx-font-style: italic; -fx-text-fill: #666;">
+            <padding><Insets top="20"/></padding>
+        </Label>
+    </VBox>
+</AnchorPane>
+
