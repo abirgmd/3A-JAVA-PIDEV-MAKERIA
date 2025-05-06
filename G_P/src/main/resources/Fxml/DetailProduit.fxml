@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.DetailProduitController"
+      prefWidth="800" maxWidth="800" prefHeight="400" maxHeight="400"
+      style="-fx-background-color: #f9f9f9; -fx-padding: 2;" spacing="20">
+
+    <!-- Breadcrumb Navigation -->
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding-bottom: 25px; -fx-alignment: CENTER;">
+        <Hyperlink text="Produits" onAction="#navigateToMenuProduits"/>
+        <Text text=" > "/>
+        <Text fx:id="productNameBreadcrumb"/>
+    </HBox>
+
+    <!-- Product Details Card -->
+    <HBox spacing="20" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #962071; -fx-border-radius: 8;" prefWidth="600">
+        <!-- Product Images -->
+        <VBox spacing="10" prefWidth="400">
+            <!-- Main Image -->
+            <ImageView fx:id="mainImageView"
+                       fitWidth="400"
+                       fitHeight="400"
+                       preserveRatio="true"
+                       style="-fx-border-color: #ddd; -fx-border-width: 1; -fx-border-radius: 5;"/>
+
+            <!-- Thumbnails Container -->
+            <HBox fx:id="imageContainer"
+                  spacing="10"
+                  alignment="CENTER"
+                  style="-fx-padding: 10;"/>
+        </VBox>
+
+        <!-- Product Information -->
+        <VBox spacing="15" prefWidth="200">
+            <Text fx:id="productNameLabel" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+            <Text fx:id="productDescriptionLabel" style="-fx-font-size: 14;" wrappingWidth="200"/>
+
+            <HBox spacing="20">
+                <VBox spacing="5">
+                    <Text text="Price:" style="-fx-font-weight: bold;"/>
+                    <Text fx:id="productPriceLabel" style="-fx-font-size: 18; -fx-fill: #962071;"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Text text="Stock:" style="-fx-font-weight: bold;"/>
+                    <Text fx:id="productStockLabel"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="-" onAction="#decreaseQuantity" style="-fx-background-color: #962071; -fx-text-fill: white;"/>
+                <TextField fx:id="quantityField" prefWidth="50" text="1"/>
+                <Button text="+" onAction="#increaseQuantity" style="-fx-background-color: #962071; -fx-text-fill: white;"/>
+                <Button text="Ajouter au Panier" onAction="#addToCart" style="-fx-background-color: #962071; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <!-- Review Button -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Ajouter Avis" onAction="#navigateToReviewForm"
+                        style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

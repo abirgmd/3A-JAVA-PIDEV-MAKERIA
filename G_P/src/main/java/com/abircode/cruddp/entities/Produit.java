@@ -1,5 +1,7 @@
 package com.abircode.cruddp.entities;
 
+import java.time.LocalDateTime;
+
 public class Produit {
     private int id;
     private String nomprod;
@@ -13,6 +15,12 @@ public class Produit {
     private int nombre_produits_en_stock;
     private double prixprod;
     private Categorie categorie; // Remplacement de categorie_id par un objet Categorie
+
+    // Champs de promotion
+    private LocalDateTime date_promotion;
+    private double reduction;
+    private double prixPromo;
+    private LocalDateTime promotionExpireAt;
 
     // Getters et setters pour chaque champ
     public int getId() {
@@ -109,5 +117,37 @@ public class Produit {
 
     public void setImageSmall3(String image_small3) {
         this.image_small3 = image_small3;
+    }
+
+    public LocalDateTime getDate_promotion() {
+        return date_promotion;
+    }
+
+    public void setDate_promotion(LocalDateTime date_promotion) {
+        this.date_promotion = date_promotion;
+    }
+
+    public double getReduction() {
+        return reduction;
+    }
+
+    public void setReduction(double reduction) {
+        this.reduction = reduction;
+    }
+
+    public double getPrixPromo() {
+        return prixPromo;
+    }
+
+    public void setPrixPromo(double prixPromo) {
+        this.prixPromo = prixPromo;
+    }
+
+    public LocalDateTime getPromoExpireAt() {
+        return promotionExpireAt;
+    }
+
+    public void setPromoExpireAt(LocalDateTime promoExpireAt) {
+        this.promotionExpireAt = promoExpireAt;
     }
 }

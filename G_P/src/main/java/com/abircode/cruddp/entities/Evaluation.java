@@ -9,12 +9,13 @@ public class Evaluation {
     private String datePublication;
     private String userName;
     private String userMail;
+    private Produit produit;
 
     public Evaluation() {
     }
 
-    public Evaluation(int id, int userId, int produitId, String reviewText, int note, 
-                     String datePublication, String userName, String userMail) {
+    public Evaluation(int id, int userId, int produitId, String reviewText, int note,
+                      String datePublication, String userName, String userMail) {
         this.id = id;
         this.userId = userId;
         this.produitId = produitId;
@@ -87,6 +88,14 @@ public class Evaluation {
 
     public void setUserMail(String userMail) {
         this.userMail = userMail;
+    }
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
 
     @Override

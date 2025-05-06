@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane fx:controller="com.abircode.cruddp.Controller.ProductController"
+            xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            prefHeight="600.0" prefWidth="1200.0"
+            styleClass="main-container">
+
+    <children>
+        <!-- Top Bar with Search Field and Buttons -->
+        <HBox spacing="20" layoutX="20.0" layoutY="20.0" alignment="CENTER_LEFT" prefWidth="1160">
+            <TextField fx:id="searchField" promptText="Rechercher un produit..." prefWidth="300.0" styleClass="search-field"/>
+            <!-- Sorting ComboBox -->
+            <ComboBox fx:id="sortByComboBox" promptText="Trier par..." prefWidth="150.0"   onAction="#sortByNameAndDescription"/>
+
+            <!-- Sort Order ComboBox -->
+            <ComboBox fx:id="sortOrderComboBox" promptText="Ordre" prefWidth="150.0"   onAction="#sortByNameAndDescription"/>
+
+            <Button fx:id="addProductButton" text="Ajouter"
+                    onAction="#showAddForm" styleClass="add-button" prefWidth="100.0"/>
+            <Button text="Statistiques"
+                    onAction="#showStats" styleClass="info-button" prefWidth="100.0"/>
+        </HBox>
+
+        <!-- ScrollPane for product cards -->
+        <ScrollPane layoutX="20.0" layoutY="80.0" prefHeight="750.0" prefWidth="1280.0"
+                    styleClass="card-container">
+            <FlowPane fx:id="productCardsContainer" hgap="10" vgap="10" style="-fx-padding: 10;">
+                <!-- Product cards will be added here dynamically -->
+            </FlowPane>
+        </ScrollPane>
+
+        <!-- Form container for creating and updating products -->
+        <StackPane fx:id="formContainer" visible="false" prefHeight="840.0">
+            <!-- Add Product Form -->
+            <VBox fx:id="addProductForm" visible="false" spacing="5" styleClass="form-container">
+                <TextField fx:id="nomprod" promptText="Nom du produit" />
+                <Label fx:id="nomprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="desprod" promptText="Description" />
+                <Label fx:id="desprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="avantages" promptText="Avantages" />
+                <Label fx:id="avantagesError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <HBox spacing="10">
+                    <ComboBox fx:id="imageTypeComboBox" promptText="Type d'image" prefWidth="150.0" />
+                    <TextField fx:id="image_large" promptText="Image URL" />
+                    <Button fx:id="selectImageButton" text="Sélectionner PNG" onAction="#selectImageFile" />
+                </HBox>
+                <Label fx:id="image_largeError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="nombre_produits_en_stock" promptText="Stock" />
+                <Label fx:id="nombre_produits_en_stockError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="sizeprod" promptText="Taille" />
+                <Label fx:id="sizeprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="prixprod" promptText="Prix" />
+                <Label fx:id="prixprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <ComboBox fx:id="categorieComboBox" promptText="Choisir une catégorie" />
+
+                <HBox spacing="10">
+                    <Button text="Ajouter" onAction="#creatProduit" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+
+            <!-- Update Product Form -->
+            <VBox fx:id="updateProductForm" visible="false" spacing="5" styleClass="form-container">
+                <TextField fx:id="updateNomprod" promptText="Nom du produit" />
+                <Label fx:id="updateNomprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="updateDesprod" promptText="Description" />
+                <Label fx:id="updateDesprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="updateAvantages" promptText="Avantages" />
+                <Label fx:id="updateAvantagesError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <HBox spacing="10">
+                    <ComboBox fx:id="updateImageTypeComboBox" promptText="Type d'image" prefWidth="150.0" />
+                    <TextField fx:id="updateImageLarge" promptText="Image URL" />
+                    <Button fx:id="updateSelectImageButton" text="Sélectionner PNG" onAction="#updateSelectImageFile" />
+                </HBox>
+                <Label fx:id="updateImageLargeError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="updateNombreProduitsEnStock" promptText="Stock" />
+                <Label fx:id="updateNombreProduitsEnStockError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="updateSizeprod" promptText="Taille" />
+                <Label fx:id="updateSizeprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <TextField fx:id="updatePrixprod" promptText="Prix" />
+                <Label fx:id="updatePrixprodError" style="-fx-text-fill: red; -fx-font-size: 11px;" />
+
+                <ComboBox fx:id="updateCategorieComboBox" promptText="Choisir une catégorie" />
+
+                <HBox spacing="10">
+                    <Button text="Mettre à jour" onAction="#updateProduit" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>

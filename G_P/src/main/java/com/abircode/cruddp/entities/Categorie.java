@@ -49,6 +49,6 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return nomcat;
+        return nomcat; // Affichage du nom dans le ComboBox
     }
 }

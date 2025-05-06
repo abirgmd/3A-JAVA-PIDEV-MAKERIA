@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.abircode.cruddp.Controller.ProduitController"
+            stylesheets="@../css/style.css">
+    <VBox fx:id="sidebar" style="-fx-background-color: #0A2647; -fx-padding: 10;"
+          stylesheets="@../css/style.css"
+          AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+        <!-- Titre "MAKERIA" -->
+        <Label text="MAKERIA" style="-fx-text-fill: #ae8f02; -fx-font-size: 38px; -fx-font-weight: bold;"
+               AnchorPane.topAnchor="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="20"
+               alignment="center" />
+        <children>
+            <!-- Menu Produits -->
+            <MenuButton onAction="#showProduitsPane" prefWidth="180" text="Gestion Produits" styleClass="menu-button">
+                <items>
+                    <MenuItem text="Produits" onAction="#showProduitsPane"/>
+                    <MenuItem text="Catégories" onAction="#showCategoriesPane"/>
+                    <MenuItem text="Évaluations" onAction="#showEvaluationsPane"/>
+                    <MenuItem text="Fenêtre de recherche" onAction="#addS"/>
+                    <MenuItem text="Générer une image" onAction="#addImg"/>
+                    <MenuItem text="Comparer une image" onAction="#addImgCom"/>
+
+                </items>
+            </MenuButton>
+
+            <MenuButton onAction="#showeventPane" prefWidth="180" text="Gestion Événement" styleClass="menu-button">
+                <items>
+                    <MenuItem text="Événements" onAction="#showeventPane"/>
+                    <MenuItem text="Commentaires" onAction="#showCommentPane"/>
+                    <MenuItem text="Calendrier" onAction="#showCalenderPane"/>
+
+                </items>
+            </MenuButton>
+            <!-- Menu Forum -->
+            <MenuButton onAction="#showForumPane" prefWidth="180" text="Gestion Forum" styleClass="menu-button">
+                <items>
+                    <MenuItem text="Messages" onAction="#addMessage"/>
+                </items>
+            </MenuButton>
+
+            <!-- Menu Réclamations -->
+            <MenuButton onAction="#showReclamationPane" prefWidth="180" text="Gestion Réclamation" styleClass="menu-button">
+                <items>
+                    <MenuItem text="Réponses" onAction="#showReponsesPane"/>
+                </items>
+            </MenuButton>
+
+            <!-- Menu Utilisateurs et profile -->
+            <MenuButton onAction="#showmenuprofile" prefWidth="180" text="Gestion Utilisateurs" styleClass="menu-button">
+                <items>
+                    <MenuItem text="Utilisateurs" onAction="#showusers"/>
+                    <MenuItem text="Profil" onAction="#showprofile"/>
+                    <MenuItem text="Statistiques" onAction="#stats"/>
+                    <MenuItem text="Déconnexion" onAction="#logout"/>
+                </items>
+            </MenuButton>
+        </children>
+
+        <styleClass>
+            <String fx:value="column-header-background"/>
+            <String fx:value="column-header"/>
+            <String fx:value="button"/>
+            <String fx:value="active"/>
+            <String fx:value="text-label"/>
+            <String fx:value="vbox-sidebar"/>
+        </styleClass>
+    </VBox>
+
+    <!-- Zone de contenu dynamique -->
+    <StackPane fx:id="contentPane" style="-fx-background-color: #ffffff;"
+               AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="0"
+               AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+    </StackPane>
+
+    <styleClass>
+        <String fx:value="button"/>
+        <String fx:value="column-header"/>
+        <String fx:value="grid-pane"/>
+        <String fx:value="nav-bar"/>
+        <String fx:value="active"/>
+        <String fx:value="vbox-sidebar"/>
+        <String fx:value="text-label"/>
+        <String fx:value="table-view"/>
+        <String fx:value="table-row-cell"/>
+        <String fx:value="table-cell"/>
+        <String fx:value="filler"/>
+        <String fx:value="column-header-background"/>
+    </styleClass>
+</AnchorPane>

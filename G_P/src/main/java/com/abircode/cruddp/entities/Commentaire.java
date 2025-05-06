@@ -9,18 +9,27 @@ public class Commentaire {
     private LocalDateTime timecomment;
     private String text_commentaire;
     private int userId; // Ajout du champ userId
+    private int likes; // Champ pour les likes
 
     // Constructeur sans paramètres
     public Commentaire() {}
 
     // Constructeur avec paramètres
-    public Commentaire(int id, Event event, String nomcomment, LocalDateTime timecomment, String text_commentaire, int userId) {
+    public Commentaire(int id, Event event, String nomcomment, LocalDateTime timecomment, String text_commentaire, int userId , int likes) {
         this.id = id;
         this.event = event;
         this.nomcomment = nomcomment;
         this.timecomment = timecomment;
         this.text_commentaire = text_commentaire;
-        this.userId = userId;  // Initialisation du userId
+        this.userId = userId;
+        this.likes = likes;
+    }
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     // Getters et Setters

@@ -1,0 +1,43 @@
+/* Loading Spinners */
+.progress-indicator {
+    -fx-progress-color: #3498db;
+}
+
+.progress-indicator:indeterminate {
+    -fx-rotate: 0;
+}
+
+.email-progress {
+    -fx-progress-color: #2ecc71;
+}
+
+/* Password Strength Bar */
+.strength-weak {
+    -fx-accent: #e74c3c;
+}
+
+.strength-medium {
+    -fx-accent: #f39c12;
+}
+
+.strength-strong {
+    -fx-accent: #2ecc71;
+}
+
+/* Dialog Styling */
+.dialog-pane {
+    -fx-background-color: #f8f9fa;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #ecf0f1;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #2980b9;
+}

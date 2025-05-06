@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.user.UserProfileController">
+
+    <VBox fx:id="contentPane" alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+    <!-- Profile Image -->
+        <ImageView fx:id="profileImage" fitHeight="204.0" fitWidth="251.0" preserveRatio="true" />
+
+        <!-- User Info -->
+        <Label fx:id="nameLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Label fx:id="emailLabel" style="-fx-text-fill: gray;" text="aa" />
+      <Label fx:id="phone" style="-fx-text-fill: gray;" text="aa" />
+      <Button mnemonicParsing="false" onAction="#edit" text="Edit profile" />
+
+        <!-- QR Code -->
+        <ImageView fx:id="qrCodeImage" fitHeight="154.0" fitWidth="166.0" preserveRatio="true" />
+    </VBox>
+</AnchorPane>

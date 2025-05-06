@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.CommentFormController"
+      fx:id="commentForm"
+      spacing="20"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 20; -fx-max-height: 500;">
+
+    <!-- Titre -->
+    <Text text="Ajouter un commentaire" style="-fx-font-size: 24px; -fx-font-family: 'Joti One'; -fx-font-weight: bold;" />
+
+    <!-- Zone de défilement pour le formulaire de commentaire -->
+    <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                style="-fx-background-color: transparent; -fx-max-height: 400;">
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+
+            <!-- GridPane pour organiser les champs du formulaire -->
+            <GridPane vgap="10" hgap="10" style="-fx-padding: 10;">
+
+                <!-- Label et TextField pour le nom d'utilisateur -->
+                <Label text="Nom d'utilisateur:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; ;-fx-font-family: 'Joti One';"/>
+                <TextField fx:id="userNameField" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                           prefWidth="250" editable="false"
+                           style="-fx-font-size: 14px;"/>
+
+                <!-- Label et TextField pour l'email -->
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;-fx-font-family: 'Joti One';"/>
+                <TextField fx:id="userEmailField" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                           prefWidth="250" editable="false"
+                           style="-fx-font-size: 14px;"/>
+
+                <!-- Label et TextArea pour le commentaire -->
+                <Label text="Commentaire:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;-fx-font-family: 'Joti One';"/>
+                <TextArea fx:id="commentTextArea" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                          prefWidth="250" prefHeight="100"
+                          style="-fx-font-size: 14px;"/>
+
+                <!-- Label et TextField pour la date -->
+                <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;-fx-font-family: 'Joti One';"/>
+                <TextField fx:id="commentDateField" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                           prefWidth="250" editable="false"
+                           style="-fx-font-size: 14px;"/>
+            </GridPane>
+
+            <!-- Bouton d'affichage des réactions -->
+            <Button fx:id="reactionButton" text="Choisir une réaction" onAction="#displayReactions"
+                    style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;-fx-font-family: 'Joti One';"/>
+
+            <!-- Conteneur pour les boutons d'émoticônes -->
+            <HBox fx:id="reactionContainer" spacing="10" style="-fx-padding: 10;-fx-font-family: 'Joti One';">
+                <!-- Réactions ici -->
+            </HBox>
+
+            <!-- Bouton de soumission du commentaire -->
+            <Button fx:id="submitCommentButton" text="Soumettre le commentaire" onAction="#submitComment"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;-fx-font-family: 'Joti One';"/>
+
+            <!-- Conteneur des commentaires existants -->
+            <VBox fx:id="commentsContainer" spacing="10" style="-fx-padding: 10;-fx-font-family: 'Joti One';">
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</VBox>

@@ -10,12 +10,40 @@ public class Event {
     private String descriptionevents;
     private String image1events;
     private String image2events;
+    private int user_id;
 
+    // Getter for userId
+    public int getUserId() {
+        return user_id;
+    }
+
+    public Event(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", date_debut=" + date_debut +
+                ", date_fin=" + date_fin +
+                ", titreevents='" + titreevents + '\'' +
+                ", descriptionevents='" + descriptionevents + '\'' +
+                ", image1events='" + image1events + '\'' +
+                ", image2events='" + image2events + '\'' +
+                ", user_id=" + user_id +
+                '}';
+    }
+
+    // Setter for userId
+    public void setUserId(int userId) {
+        this.user_id = userId;
+    }
     public Event() {
     }
 
-    public Event(int id, LocalDateTime date_debut, LocalDateTime date_fin, String titreevents, 
-                String descriptionevents, String image1events, String image2events) {
+    public Event(int id, LocalDateTime date_debut, LocalDateTime date_fin, String titreevents,
+                 String descriptionevents, String image1events, String image2events, int i) {
         this.id = id;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
@@ -79,17 +107,5 @@ public class Event {
 
     public void setImage2events(String image2events) {
         this.image2events = image2events;
-    }
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", titreevents='" + titreevents + '\'' +
-                ", descriptionevents='" + descriptionevents + '\'' +
-                ", date_debut=" + date_debut +
-                ", date_fin=" + date_fin +
-                ", image1events='" + image1events + '\'' +
-                ", image2events='" + image2events + '\'' +
-                '}';
     }
 }

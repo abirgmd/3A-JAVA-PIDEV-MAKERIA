@@ -1,0 +1,41 @@
+.navigation-combo {
+    -fx-background-color: white;
+    -fx-border-color: #b11d85;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.navigation-combo:hover {
+    -fx-border-color: #8f1668;
+}
+
+.navigation-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.navigation-combo .arrow {
+    -fx-background-color: #b11d85;
+}
+
+.navigation-combo .list-cell {
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.navigation-combo .list-cell:selected {
+    -fx-background-color: #b11d85;
+    -fx-text-fill: white;
+}
+
+.navigation-combo .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #b11d85;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.navigation-combo .list-view .list-cell:hover {
+    -fx-background-color: #f0f0f0;
+} 

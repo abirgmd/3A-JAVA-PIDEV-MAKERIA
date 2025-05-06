@@ -1,0 +1,155 @@
+.forum-container {
+    -fx-background-color: #f3f4f6;
+    -fx-padding: 20;
+    -fx-max-width: 1100;
+    -fx-min-width: 1100;
+    -fx-pref-width: 1100;
+    -fx-alignment: center;
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+}
+
+.forum-title {
+    -fx-font-size: 2.5em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-text-alignment: center;
+    -fx-padding: 0 0 40 0;
+    -fx-text-transform: uppercase;
+}
+
+.content-wrapper {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    -fx-pref-width: 1100;
+    -fx-max-width: 1100;
+    -fx-min-width: 1100;
+}
+
+.image-section {
+    -fx-pref-width: 600;
+    -fx-min-width: 600;
+    -fx-max-width: 600;
+    -fx-padding: 10;
+    -fx-alignment: center-left;
+}
+
+.contact-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-background-radius: 8;
+    -fx-fit-width: 600;
+    -fx-fit-height: 600;
+    -fx-preserve-ratio: true;
+    -fx-alignment: center-left;
+}
+
+.form-section {
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+    -fx-max-width: 500;
+    -fx-padding: 20;
+    -fx-alignment: center-right;
+    -fx-translate-x: -100;
+}
+
+.forum-messages {
+    -fx-spacing: 20;
+    -fx-margin-top: 20;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+}
+
+.forum-message {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+.forum-message:hover {
+    -fx-translate-y: -10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 6);
+}
+
+.message-content {
+    -fx-spacing: 20;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+}
+
+.form-group {
+    -fx-spacing: 10;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+    -fx-margin-bottom: 20;
+    -fx-padding: 0 10;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-margin-bottom: 10;
+    -fx-padding: 0 5;
+}
+
+.form-control {
+    -fx-background-color: rgb(243, 243, 243);
+    -fx-background-radius: 6;
+    -fx-padding: 10;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+    -fx-pref-width: 400;
+    -fx-min-width: 400;
+    -fx-max-width: 400;
+}
+
+.form-control:focused {
+    -fx-background-color: rgb(232, 232, 232);
+    -fx-outline: none;
+}
+
+.btn-primary {
+    -fx-background-color: #9c1575;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 20 50;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-min-width: 400;
+    -fx-max-width: 400;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #7e0f63;
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+}
+
+.form-submit {
+    -fx-alignment: center;
+    -fx-margin-top: 20;
+    -fx-spacing: 10;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+    -fx-padding: 0 10;
+}
+
+.form-errors {
+    -fx-text-fill: red;
+    -fx-padding: 10 15 0 15;
+    -fx-font-size: 14px;
+    -fx-margin-top: 10;
+    -fx-wrap-text: true;
+    -fx-pref-width: 500;
+    -fx-min-width: 500;
+} 

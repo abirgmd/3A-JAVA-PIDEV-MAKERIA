@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.user.UserDashboardController">
+    <!-- Header -->
+    <HBox fx:id="headerBox" alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #3498db; -fx-padding: 15;">
+        <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Label fx:id="roleLabel" style="-fx-text-fill: #ecf0f1; -fx-font-size: 14px;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="timeLabel" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+        <Button onAction="#handleLogout" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Déconnexion" />
+    </HBox>
+
+    <!-- Main Content -->
+    <HBox style="-fx-background-color: #f9f9f9;" VBox.vgrow="ALWAYS">
+        <!-- Sidebar -->
+        <VBox minWidth="180" spacing="10" style="-fx-background-color: white; -fx-padding: 15;">
+            <Button onAction="#showdash" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Tableau de bord" />
+            <Button onAction="#showProfile" style="-fx-background-color: transparent; -fx-text-fill: #2c3e50; -fx-alignment: CENTER_LEFT;" text="Mon profil" />
+         <Button onAction="#gotoedit" style="-fx-background-color: transparent; -fx-text-fill: #2c3e50; -fx-alignment: CENTER_LEFT;" text="Moodifier profil" />
+        </VBox>
+
+        <!-- Content Area -->
+        <VBox spacing="20" style="-fx-padding: 20;" HBox.hgrow="ALWAYS">
+            <HBox spacing="20">
+                <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 5; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);">
+                    <Label style="-fx-font-weight: bold;" text="Your Activity" />
+                    <Label fx:id="lastLoginLabel" />
+                    <Label text="5 tasks completed this week" />
+                </VBox>
+            </HBox>
+
+            <Pane fx:id="contentPane" style="-fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);" VBox.vgrow="ALWAYS">
+                 <Label style="-fx-font-size: 16px; -fx-padding: 20;" text="Welcome to your dashboard!" />
+            </Pane>
+        </VBox>
+    </HBox>
+</VBox>
