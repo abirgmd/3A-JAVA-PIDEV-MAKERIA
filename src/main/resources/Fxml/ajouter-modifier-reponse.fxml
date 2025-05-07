@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.abircode.cruddp.Controller.AjouterModifierReponseController"
+            style="-fx-background-color: #f9f9f9; -fx-padding: 20px;">
+
+   <children>
+      <!-- Titre -->
+      <Label fx:id="ltitre" layoutX="230.0" layoutY="24.0" text="Repondre"
+             style="-fx-text-fill: #b11d85; -fx-font-weight: bold; -fx-font-size: 24px;"/>
+
+      <!-- Zone de texte -->
+      <TextArea fx:id="tareponse" layoutX="200.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0"
+                promptText="Votre réponse ici..."
+                style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0); -fx-padding: 10px; -fx-font-size: 14px;"/>
+
+      <!-- Label d'erreur -->
+      <Label fx:id="lblError" layoutX="200.0" layoutY="295.0" prefWidth="250.0"
+             style="-fx-text-fill: #d32f2f; -fx-font-size: 13px;"/>
+
+      <!-- Bouton de soumission -->
+      <Button fx:id="btnsubmit" layoutX="260.0" layoutY="330.0" mnemonicParsing="false"
+              onAction="#submit" text="Soumettre"
+              style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-padding: 8px 20px; -fx-font-size: 14px; -fx-cursor: hand;"/>
+   </children>
+
+
+</AnchorPane>

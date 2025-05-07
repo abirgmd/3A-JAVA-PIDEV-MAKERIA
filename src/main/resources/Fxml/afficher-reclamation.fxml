@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="996.0" style="-fx-background-color: #f0f2f5; -fx-padding: 20;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.AfficherReclamationController">
+
+    <children>
+        <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="10" layoutY="50" prefHeight="710" prefWidth="1280" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+            <content>
+                <FlowPane fx:id="reclamationCardsContainer" hgap="20" style="-fx-padding: 10;" vgap="20" />
+            </content>
+        </ScrollPane>
+
+        <HBox layoutX="600" layoutY="760" spacing="20" style="-fx-alignment: center;">
+            <children>
+                <Button fx:id="btnrejete" onAction="#rejeter" style="                             -fx-background-color: #b11d85;                             -fx-text-fill: white;                             -fx-font-weight: bold;                             -fx-background-radius: 5;                             -fx-padding: 8 20;                         " text="Rejeté" />
+                <Button fx:id="btnrepondre" onAction="#repondre" style="                             -fx-background-color: rgba(177,29,133,0.68);                             -fx-text-fill: white;                             -fx-font-weight: bold;                             -fx-background-radius: 5;                             -fx-padding: 8 20;                         " text="Répondre" />
+            </children>
+        </HBox>
+      <TextField fx:id="tfrecherche" layoutX="66.0" layoutY="14.0" promptText="Recherche ..." />
+      <ComboBox fx:id="cbtri" layoutX="287.0" layoutY="14.0" prefWidth="150.0" promptText="Tri" />
+    </children>
+</AnchorPane>

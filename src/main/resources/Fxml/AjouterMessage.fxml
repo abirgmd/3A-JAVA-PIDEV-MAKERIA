@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0" spacing="20"
+      style="-fx-background-color: #f8f6ff;"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.AjouterMessageController">
+
+    <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-effect: dropshadow(gaussian, #7c4dff, 2, 0, 0, 2);"
+           text="Ajouter un Nouveau Message">
+        <padding>
+            <Insets bottom="20.0" />
+        </padding>
+    </Label>
+
+    <GridPane alignment="CENTER" hgap="15.0" vgap="8.0"
+              style="-fx-background-color: white; -fx-background-radius: 18px; -fx-effect: dropshadow(gaussian, #b11d85, 12, 0, 0, 4);">
+        <padding>
+            <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+        </padding>
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="260.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+        <!-- Champ Titre -->
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;" text="Titre:" GridPane.rowIndex="0" />
+        <HBox spacing="7" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <TextField fx:id="tf_titre"
+                       promptText="Entrez le titre du message"
+                       style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color:#b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 14px; -fx-padding: 8 12 8 12;" />
+            <Button fx:id="btn_micro_titre" onAction="#speechToTextTitre" prefHeight="30" prefWidth="40"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-cursor: hand;" text="🎤" />
+        </HBox>
+        <Label fx:id="error_titre"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;"
+               text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- Champ Description -->
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;" text="Description:" GridPane.rowIndex="2" />
+        <HBox spacing="7" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="tf_description"
+                       promptText="Entrez une brève description"
+                       style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color: #b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 14px; -fx-padding: 8 12 8 12;" />
+            <Button fx:id="btn_micro_description" onAction="#speechToTextDescription" prefHeight="30" prefWidth="40"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-cursor: hand;" text="🎤" />
+        </HBox>
+        <Label fx:id="error_description"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;"
+               text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <!-- Champ Contenu -->
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;" text="Contenu:" GridPane.rowIndex="4" />
+        <HBox spacing="7" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextArea fx:id="ta_contenu" prefHeight="60.0" prefWidth="334.0"
+                      promptText="Saisissez le contenu du message"
+                      style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color:#b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 13px; -fx-padding: 8 12 8 12;"
+                      wrapText="true" />
+            <Button fx:id="btn_micro_contenu" onAction="#speechToTextContenu" prefHeight="60.0" prefWidth="55.0"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-cursor: hand;" text="🎤" />
+        </HBox>
+        <Label fx:id="error_contenu"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;"
+               text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <!-- Sélection de l'image -->
+        <Label style="-fx-font-weight: bold; -fx-text-fill:#b11d85; -fx-font-size: 15px;" text="Image:" GridPane.rowIndex="7" />
+        <VBox spacing="3" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Button fx:id="btn_choisirImage" onAction="#choisirImage"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-cursor: hand;"
+                    text="Choisir une image" />
+            <Label fx:id="labelImagePath"
+                   style="-fx-text-fill: #b11d85; -fx-font-style: italic; -fx-font-size: 12px;"
+                   text="">
+                <padding><Insets top="5" /></padding>
+            </Label>
+        </VBox>
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button onAction="#AjouterMessage" prefHeight="38.0" prefWidth="130.0"
+                style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 13px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, #b11d85, 6, 0, 0, 2);"
+                text="Ajouter" />
+        <Button onAction="#handleCancel" prefHeight="38.0" prefWidth="130.0"
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 13px; -fx-cursor: hand;"
+                text="Retourner" />
+    </HBox>
+
+
+
+</VBox>

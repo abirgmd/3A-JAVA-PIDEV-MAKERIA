@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx" 
+      xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.abircode.cruddp.Controller.AfficherReclamationUserController"
+      stylesheets="@../styles/afficher-reclamation-user.css"
+      spacing="20" 
+      prefWidth="900">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox styleClass="main-container" spacing="20">
+
+
+        <!-- Main Content Section -->
+        <VBox styleClass="content-container" spacing="20">
+            <!-- ListView avec style personnalisé -->
+            <ListView fx:id="lvreclamation"
+                     prefHeight="400"
+                     prefWidth="500"
+                     onMouseClicked="#reclamationselected"
+                     styleClass="reclamation-list"/>
+
+            <!-- Buttons Section -->
+            <HBox styleClass="button-container">
+                <Button fx:id="btnsupp"
+                        onAction="#supprimer"
+                        text="Supprimer"
+                        styleClass="action-button"/>
+                
+                <Button fx:id="btnmodifier"
+                        onAction="#modifier"
+                        text="Modifier"
+                        styleClass="action-button"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.AIContentExplainerController"
+  stylesheets="@../css/ai.css" >
+
+    <children>
+        <!-- VBox for vertical alignment of elements -->
+        <VBox layoutX="14.0" layoutY="14.0" spacing="20.0" alignment="CENTER" prefWidth="1250.0">
+            <!-- HBox for input field and button alignment -->
+            <HBox spacing="10.0" alignment="CENTER">
+                <!-- Input Field for Prompt -->
+                <TextField fx:id="promptInput" prefHeight="70.0" prefWidth="1000.0" promptText="Enter your prompt here..." />
+                <!-- Generate Button -->
+                <Button fx:id="generateButton" mnemonicParsing="false" onAction="#onGenerateButtonClick" text="Aller !" />
+            </HBox>
+
+            <!-- Response Display Area -->
+            <TextArea fx:id="responseDisplay" prefHeight="600.0" prefWidth="1200.0" wrapText="true" editable="false"/>
+        </VBox>
+    </children>
+</AnchorPane>

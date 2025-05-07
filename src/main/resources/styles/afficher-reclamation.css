@@ -1,0 +1,85 @@
+/* Style général */
+.form-background {
+    -fx-background-color: #ecf0f1;
+}
+
+/* ScrollPane */
+.card-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+}
+
+.card-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Conteneur des cartes */
+.card-container {
+    -fx-background-color: transparent;
+    -fx-padding: 15;
+}
+
+/* Style des cartes individuelles */
+.reclamation-card {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1;
+}
+
+.reclamation-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+/* Éléments de la carte */
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.card-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.card-content {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+    -fx-wrap-text: true;
+}
+
+.card-status {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+}
+
+.status-resolu {
+    -fx-text-fill: #27ae60;
+    -fx-background-color: #e8f8f5;
+}
+
+.status-non-resolu {
+    -fx-text-fill: #e74c3c;
+    -fx-background-color: #fdedec;
+}
+
+/* Boutons */
+.submit-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 20 8 20;
+}
+
+.submit-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button-container {
+    -fx-alignment: center;
+}

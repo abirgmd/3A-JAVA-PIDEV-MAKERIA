@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<HBox spacing="15" alignment="CENTER_LEFT" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.CartItemController"
+      style="-fx-background-color: white; -fx-border-color: #f0f0f0; -fx-border-width: 0 0 1 0; -fx-padding: 15;">
+
+    <!-- Image du produit -->
+    <ImageView fx:id="productImage" fitHeight="80" fitWidth="80" preserveRatio="true" />
+
+    <!-- Informations produit -->
+    <VBox spacing="8" HBox.hgrow="ALWAYS">
+        <!-- Nom du produit -->
+        <Label fx:id="productName" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+        <!-- Détails du produit (taille) -->
+        <HBox spacing="10">
+            <Label text="Size:" style="-fx-text-fill: #666;"/>
+            <Label fx:id="productSize" style="-fx-text-fill: #666;"/>
+            <Label text="Color:" style="-fx-text-fill: #666;"/>
+            <Label fx:id="productColor" style="-fx-text-fill: #666;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Contrôle de quantité -->
+    <HBox spacing="0" alignment="CENTER">
+        <Button fx:id="minusButton" text="-"
+                style="-fx-background-color: #f0b942; -fx-border-color: #e6a93a;
+                -fx-min-width: 32; -fx-min-height: 32; -fx-font-weight: bold;
+                -fx-text-fill: white;
+                -fx-border-radius: 4 0 0 4; -fx-background-radius: 4 0 0 4;"/>
+
+        <TextField fx:id="productQuantity" prefWidth="40" alignment="CENTER" editable="false"
+                   style="-fx-background-color: white; -fx-border-color: #e6a93a;
+                  -fx-min-height: 32; -fx-border-width: 1 0 1 0;"/>
+
+        <Button fx:id="plusButton" text="+"
+                style="-fx-background-color: #f0b942; -fx-border-color: #e6a93a;
+                -fx-min-width: 32; -fx-min-height: 32; -fx-font-weight: bold;
+                -fx-text-fill: white;
+                -fx-border-radius: 0 4 4 0; -fx-background-radius: 0 4 4 0;"/>
+    </HBox>
+
+    <!-- Prix -->
+    <Label fx:id="productPrice" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+    <!-- Bouton de suppression -->
+    <Button fx:id="removeButton" text="🗑️"
+            style="-fx-background-color: transparent; -fx-text-fill: #ff4d4d;
+            -fx-font-size: 14px; -fx-cursor: hand;"/>
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+</HBox>

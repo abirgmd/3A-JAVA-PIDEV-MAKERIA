@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="scrollPane" prefHeight="600" prefWidth="1200"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.abircode.cruddp.Controller.CategoryController">
+
+    <HBox spacing="15" style="-fx-padding: 10;">
+        <!-- Left Column (Search + Cards) -->
+        <VBox spacing="10" prefWidth="800">
+            <!-- Search Bar + Add Button -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 0 0 10 0;">
+                <TextField fx:id="searchField" promptText="Rechercher des catégories..."
+                           onKeyReleased="#searchCategories" prefWidth="300"/>
+                <!-- ComboBox pour le tri -->
+                <ComboBox fx:id="sortByComboBox" promptText="Trier par..." prefWidth="150.0" onAction="#sortCategories"/>
+                <!-- ComboBox pour l'ordre de tri -->
+                <ComboBox fx:id="sortOrderComboBox" promptText="Ordre" prefWidth="150.0" onAction="#sortCategories"/>
+
+                <Button text="Ajouter" onAction="#showCreateForm"
+                        styleClass="add-button" prefWidth="100" prefHeight="30"/>
+            </HBox>
+
+            <!-- Category Cards Grid -->
+            <GridPane fx:id="cardGrid" hgap="15" vgap="15" style="-fx-padding: 5;"/>
+        </VBox>
+
+        <!-- Right Column (Forms) -->
+        <!-- Left Column (Forms - Fixed) - EXACTEMENT comme vous l'avez spécifié -->
+        <VBox fx:id="formsContainer" spacing="10" style="-fx-padding: 5;" prefWidth="350">
+            <!-- Add Category Form -->
+            <VBox fx:id="addCategoryForm" spacing="10" styleClass="form-container" visible="false">
+                <TextField fx:id="nomcat" promptText="Nom de la catégorie"/>
+                <TextField fx:id="descriptioncat" promptText="Description"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Ajouter" onAction="#createCategory" styleClass="primary-button"/>
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button"/>
+                </HBox>
+            </VBox>
+
+            <!-- Update Category Form -->
+            <VBox fx:id="updateCategoryForm" spacing="10" styleClass="form-container" visible="false">
+                <TextField fx:id="updateNomcat" promptText="Nom de la catégorie"/>
+                <TextField fx:id="updateDescriptioncat" promptText="Description"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Mettre à jour" onAction="#updateCategory" styleClass="primary-button"/>
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+    <HBox spacing="10" alignment="center">
+        <Button fx:id="prevButton" text="Précédent" onAction="#goToPreviousPage" />
+        <Button fx:id="nextButton" text="Suivant" onAction="#goToNextPage" />
+    </HBox>
+</VBox>

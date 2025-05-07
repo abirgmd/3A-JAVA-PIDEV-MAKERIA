@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox prefHeight="600.0" prefWidth="650.0" spacing="18"
+      style="-fx-padding: 25; -fx-background-color: #f8f6ff;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.RepliesWindowController">
+
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-effect: dropshadow(gaussian,#b11d85, 2, 0, 0, 2);" text="RÉPONSES" />
+
+    <ListView fx:id="repliesListView"
+              style="-fx-background-color: #f8f6ff; -fx-border-color: #b11d85; -fx-border-width: 2; -fx-background-radius: 12px; -fx-border-radius: 12px; -fx-pref-height: 250;" />
+
+    <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 14px; -fx-padding: 18 18 18 18; -fx-effect: dropshadow(gaussian, #b11d85, 8, 0, 0, 2);">
+        <Label text="Ajouter une réponse :" style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;" />
+        <TextArea fx:id="replyTextArea"
+                  promptText="Écrivez votre réponse ici..."
+                  wrapText="true"
+                  style="-fx-pref-height: 80; -fx-background-color: #f8f6ff; -fx-border-color: #b11d85; -fx-border-width: 2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 13px; -fx-padding: 8 12 8 12;" />
+
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 0 0 0 0;">
+            <Button onAction="#handleSendReply"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian,#b11d85, 6, 0, 0, 2);"
+                    text="Envoyer" prefWidth="110" prefHeight="38"/>
+            <Button onAction="#handleClose"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12px; -fx-cursor: hand;"
+                    text="Fermer" prefWidth="110" prefHeight="38"/>
+        </HBox>
+    </VBox>
+</VBox>

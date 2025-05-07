@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ScrollPane?>
+
+<?import javafx.scene.control.ComboBox?>
+<VBox fx:id="scrollPane" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.EvaluationController">
+    <VBox fx:id="evaluationListVBox" spacing="10" style="-fx-padding: 10;">
+        <!-- Search Bar -->
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <TextField fx:id="searchField" promptText="Search Evaluations" onKeyReleased="#searchEvaluations" prefWidth="300"/>
+            <ComboBox fx:id="sortByComboBox" promptText="Trier par..." prefWidth="150.0" onAction="#sortEvaluations"/>
+            <ComboBox fx:id="sortOrderComboBox" promptText="Ordre" prefWidth="150.0" onAction="#sortEvaluations"/>
+
+        </HBox>
+
+        <!-- Grid for Evaluation Cards -->
+        <GridPane fx:id="cardGrid" hgap="20" vgap="20" style="-fx-padding: 10;">
+            <!-- No ColumnConstraints in FXML, define them programmatically in the controller -->
+        </GridPane>
+
+        <!-- Pagination Controls -->
+        <HBox spacing="10" alignment="center">
+            <Button fx:id="prevButton" text="Précédent" onAction="#prevPage" />
+            <Button fx:id="nextButton" text="Suivant" onAction="#nextPage" />
+        </HBox>
+    </VBox>
+</VBox>

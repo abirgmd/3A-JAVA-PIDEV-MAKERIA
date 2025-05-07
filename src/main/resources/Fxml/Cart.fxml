@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.effect.DropShadow?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.abircode.cruddp.Controller.CartController"
+            style="-fx-background-color: white;">
+
+    <!-- Contenu principal -->
+    <VBox spacing="20" AnchorPane.topAnchor="15.0" AnchorPane.leftAnchor="20.0"
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Titre et options de tri -->
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label text="Shopping Cart" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="trier par:" style="-fx-text-fill: #333;"/>
+            <ComboBox fx:id="sortComboBox" prefWidth="130" style="-fx-background-radius: 4;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Prix" />
+                        <String fx:value="Quantité" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+
+        <!-- Séparateur -->
+        <Separator />
+
+        <!-- Liste des produits -->
+        <ListView fx:id="cartListView" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: white; -fx-border-color: transparent;">
+            <VBox.margin>
+                <Insets top="5.0" bottom="15.0" />
+            </VBox.margin>
+        </ListView>
+
+        <!-- Séparateur -->
+        <Separator />
+
+        <!-- Total du panier -->
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 20 0;">
+            <Label text="Total:" style="-fx-font-weight: bold; -fx-font-size: 20px;"/>
+            <Label fx:id="totalPriceLabel" text="8,91 DNT"
+                   style="-fx-font-weight: bold; -fx-font-size: 22px; -fx-text-fill: #e74c3c;"/>
+        </HBox>
+
+        <!-- Bouton pour procéder au paiement (aligné à gauche) -->
+        <Button fx:id="proceedToPayBtn" text="procéder au paiement" onAction="#handleProceedToPayment"
+                style="-fx-background-color: #f0b942; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-font-size: 15px;
+                       -fx-padding: 15 30; -fx-background-radius: 4;"
+                prefWidth="300" alignment="CENTER_LEFT">
+            <effect>
+                <DropShadow color="#00000040" radius="4" spread="0.05" />
+            </effect>
+        </Button>
+    </VBox>
+
+    <!-- Chatbot flottant (restauré comme dans la version originale) -->
+    <fx:include source="ChatbotFloating.fxml" AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0"/>
+</AnchorPane>

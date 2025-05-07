@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.ReclamationStatsController">
+    <PieChart fx:id="pieChart" title="Reclamation Statuses">
+
+    </PieChart>
+</VBox>

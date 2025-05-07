@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f5f5f5;"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.AfficherMessageAdminController">
+
+    <!-- Header -->
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4a148c;"
+               text="Gestion des messages (Admin)" />
+        <Button text="Rafraîchir" onAction="#handleRefresh" />
+    </HBox>
+
+    <!-- Search and Sort Bar -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField"
+                   promptText="Rechercher messages..."
+                   style="-fx-background-radius: 20; -fx-padding: 5 15; -fx-pref-width: 300;" />
+        <ComboBox fx:id="filterCombo"
+                  promptText="Filtrer par..."
+                  style="-fx-background-radius: 20; -fx-pref-width: 200;" />
+        <ComboBox fx:id="sortOptions"
+                  promptText="Trier par..."
+                  style="-fx-background-radius: 20; -fx-pref-width: 200;" />
+    </HBox>
+
+    <!-- Messages List -->
+    <ListView fx:id="messagesList"
+              style="-fx-background-color: transparent; -fx-padding: 5;"
+              VBox.vgrow="ALWAYS" />
+
+    <!-- Pagination -->
+    <HBox fx:id="paginationBox"
+          spacing="10"
+          alignment="CENTER"
+          style="-fx-padding: 10 0;" />
+
+    <!-- Message Count -->
+    <Label fx:id="countLabel"
+           style="-fx-text-fill: #4a148c; -fx-font-size: 14px;" />
+
+    <!-- KPI Statistiques -->
+    <HBox spacing="20" style="-fx-padding: 10 0;">
+        <VBox spacing="5">
+            <Label text="Total messages" style="-fx-font-weight: bold;" />
+            <Label fx:id="totalMessagesLabel" style="-fx-font-size: 16px;" />
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Utilisateurs actifs" style="-fx-font-weight: bold;" />
+            <Label fx:id="activeUsersLabel" style="-fx-font-size: 16px;" />
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Moyenne/jour" style="-fx-font-weight: bold;" />
+            <Label fx:id="avgMessagesLabel" style="-fx-font-size: 16px;" />
+        </VBox>
+    </HBox>
+
+    <!-- Statistiques Graphiques -->
+    <HBox spacing="20">
+        <BarChart fx:id="messagesByUserChart" legendVisible="false"
+                  style="-fx-background-color: white; -fx-background-radius: 8; -fx-pref-width: 350; -fx-pref-height: 220;">
+            <xAxis>
+                <CategoryAxis label="Utilisateurs" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Nombre de messages" />
+            </yAxis>
+        </BarChart>
+        <LineChart fx:id="activityTrendChart" legendVisible="false"
+                   style="-fx-background-color: white; -fx-background-radius: 8; -fx-pref-width: 350; -fx-pref-height: 220;">
+            <xAxis>
+                <CategoryAxis label="Période" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Messages" />
+            </yAxis>
+        </LineChart>
+        <PieChart fx:id="messagesPieChart"
+                  style="-fx-background-color: white; -fx-background-radius: 8; -fx-pref-width: 250; -fx-pref-height: 220;" />
+    </HBox>
+</VBox>

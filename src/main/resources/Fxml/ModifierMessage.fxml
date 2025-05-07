@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="450.0" prefWidth="650.0" spacing="20"
+      style="-fx-background-color: #f8f6ff;"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.ModifierMessageController">
+
+    <Label text="Modifier le Message"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-effect: dropshadow(gaussian, #7c4dff, 2, 0, 0, 2);">
+        <padding><Insets bottom="20"/></padding>
+    </Label>
+
+    <GridPane hgap="15" vgap="10" alignment="CENTER"
+              style="-fx-background-color: white; -fx-background-radius: 18px; -fx-effect: dropshadow(gaussian, #7c4dff33, 12, 0, 0, 4);">
+        <padding><Insets top="25" bottom="25" left="50" right="50"/></padding>
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="130"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="350"/>
+        </columnConstraints>
+
+        <!-- Titre -->
+        <Label text="Titre:" GridPane.rowIndex="0"
+               style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;"/>
+        <TextField fx:id="titreField" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   promptText="Titre du message"
+                   style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color: #b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 14px; -fx-padding: 8 12 8 12;"/>
+        <Label fx:id="titreError" GridPane.rowIndex="1" GridPane.columnIndex="1"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;" text=""/>
+
+        <!-- Description -->
+        <Label text="Description:" GridPane.rowIndex="2"
+               style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;"/>
+        <TextArea fx:id="descriptionField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefRowCount="3"
+                  promptText="Description"
+                  wrapText="true"
+                  style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color: #b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 14px; -fx-padding: 8 12 8 12;"/>
+        <Label fx:id="descriptionError" GridPane.rowIndex="3" GridPane.columnIndex="1"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;" text=""/>
+
+        <!-- Contenu -->
+        <Label text="Contenu:" GridPane.rowIndex="4"
+               style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;"/>
+        <TextArea fx:id="contenuField" GridPane.rowIndex="4" GridPane.columnIndex="1" prefRowCount="5"
+                  promptText="Contenu"
+                  wrapText="true"
+                  style="-fx-background-color: #f8f6ff; -fx-border-width: 2px; -fx-border-color:#b11d85; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 13px; -fx-padding: 8 12 8 12;"/>
+        <Label fx:id="contenuError" GridPane.rowIndex="5" GridPane.columnIndex="1"
+               style="-fx-text-fill: #f44336; -fx-font-weight: bold; -fx-font-size: 12px;" text=""/>
+
+        <!-- Image -->
+        <Label text="Image:" GridPane.rowIndex="6"
+               style="-fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-font-size: 15px;"/>
+        <VBox GridPane.rowIndex="6" GridPane.columnIndex="1" spacing="6" alignment="CENTER_LEFT">
+            <Button fx:id="chooseImageButton" text="Choisir une image" onAction="#handleChooseImage"
+                    style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px; -fx-cursor: hand;"/>
+            <Label fx:id="imagePathLabel" text="Aucune image sélectionnée"
+                   style="-fx-text-fill: #b11d85; -fx-font-style: italic; -fx-font-size: 12px;"/>
+        </VBox>
+    </GridPane>
+
+    <!-- Aperçu de l'image -->
+    <ImageView fx:id="imageViewPreview" fitHeight="100" fitWidth="100" preserveRatio="true"
+               style="-fx-border-color: #7c4dff; -fx-border-width: 2; -fx-background-radius: 10px; -fx-border-radius: 10px;"/>
+
+    <!-- Boutons -->
+    <HBox spacing="20" alignment="CENTER_RIGHT" style="-fx-padding: 15 50 15 50;">
+        <Button text="Enregistrer" onAction="#handleSave"
+                style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 14px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, #7c4dff88, 6, 0, 0, 2);"
+                prefWidth="130" prefHeight="40"/>
+        <Button text="Annuler" onAction="#handleCancel"
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 14px; -fx-cursor: hand;"
+                prefWidth="130" prefHeight="40"/>
+    </HBox>
+
+</VBox>

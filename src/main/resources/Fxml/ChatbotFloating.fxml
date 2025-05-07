@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.abircode.cruddp.Controller.ChatbotFloatingController"
+           style="-fx-background-color: transparent;">
+    
+    <!-- Bouton d'ouverture du chatbot -->
+    <Button fx:id="openChatButton" text="Assistant IA"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+            onAction="#toggleChat">
+        <effect>
+            <DropShadow color="#00000033" radius="5" spread="0.1" />
+        </effect>
+    </Button>
+
+    <!-- Fenêtre du chatbot -->
+    <VBox fx:id="chatWindow" visible="false" managed="false"
+          style="-fx-background-color: white; -fx-background-radius: 10;"
+          maxWidth="300" maxHeight="400">
+        <effect>
+            <DropShadow color="#00000066" radius="10" spread="0.1" />
+        </effect>
+        
+        <!-- En-tête -->
+        <HBox style="-fx-background-color: #4CAF50; -fx-background-radius: 10 10 0 0; -fx-padding: 10;">
+            <Label text="Assistant IA" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="closeButton" text="X" 
+                    style="-fx-background-color: transparent; -fx-text-fill: white;"
+                    onAction="#toggleChat"/>
+        </HBox>
+
+        <!-- Zone de chat -->
+        <TextArea fx:id="chatArea" VBox.vgrow="ALWAYS" 
+                  editable="false" wrapText="true"
+                  style="-fx-font-size: 14px; -fx-padding: 10;"/>
+
+        <!-- Zone de saisie -->
+        <HBox style="-fx-padding: 10; -fx-spacing: 5;">
+            <TextField fx:id="messageField" HBox.hgrow="ALWAYS"
+                       promptText="Tapez votre message ici..."/>
+            <Button fx:id="sendButton" text="Envoyer"
+                    onAction="#handleSendMessage"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+</StackPane> 

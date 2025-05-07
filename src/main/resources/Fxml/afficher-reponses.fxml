@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="590.0" prefWidth="901.0" style="-fx-background-color: #f0f0f0; -fx-padding: 20px;" xmlns="http://javafx.com/javafx " xmlns:fx="http://javafx.com/fxml" fx:controller="com.abircode.cruddp.Controller.AfficherReponsesController">
+
+    <children>
+        <!-- ListView avec style personnalisé -->
+        <ListView fx:id="lvreponse" layoutX="47.0" layoutY="46.0" prefHeight="710" prefWidth="1260" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0); -fx-padding: 10px;" />
+
+        <!-- Conteneur de boutons centré -->
+        <HBox layoutX="550" layoutY="760" spacing="20" style="-fx-alignment: center; -fx-padding: 10px;">
+            <!-- Bouton Supprimer stylisé -->
+            <Button fx:id="btnsupp" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-padding: 8px 20px; -fx-font-size: 14px; -fx-cursor: hand;" text="Supprimer" />
+
+            <!-- Bouton Modifier stylisé -->
+            <Button fx:id="btnmodifier" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: rgba(177,29,133,0.68); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-padding: 8px 20px; -fx-font-size: 14px; -fx-cursor: hand;" text="Modifier" />
+         <Button fx:id="btnsupp1" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#stat" style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-padding: 8px 20px; -fx-font-size: 14px; -fx-cursor: hand;" text="Statistique" />
+            
+        </HBox>
+    </children>
+</AnchorPane>

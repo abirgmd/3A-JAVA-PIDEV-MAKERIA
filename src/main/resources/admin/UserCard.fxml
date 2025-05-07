@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.user.admin.UserCardController"
+      style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5; -fx-padding: 10; -fx-spacing: 10;"
+      prefWidth="300">
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <ImageView fx:id="userImageView" fitWidth="50" fitHeight="50" preserveRatio="true">
+            <image>
+
+                <Image url="@../uploads/users/default.png" />
+            </image>
+        </ImageView>
+
+        <VBox spacing="5">
+            <Label fx:id="nameLabel" style="-fx-font-weight: bold;"/>
+            <Label fx:id="emailLabel" style="-fx-text-fill: #666;"/>
+            <Label fx:id="roleLabel" style="-fx-text-fill: #666;"/>
+            <Label fx:id="statusLabel" style="-fx-font-weight: bold;"/>
+        </VBox>
+    </HBox>
+
+    <HBox fx:id="actionsBox" spacing="5" alignment="CENTER_RIGHT"/>
+</VBox>

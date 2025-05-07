@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:controller="com.abircode.cruddp.Controller.EventController"
+            xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            prefHeight="750.0" prefWidth="1280.0"
+            styleClass="main-container">
+
+    <children>
+        <!-- Button for adding event -->
+        <Button fx:id="addEventButton" text="Ajouter un événement" onAction="#showAddForm" layoutX="1000.0" layoutY="20.0" styleClass="add-button" prefWidth="150.0" prefHeight="30.0" />
+
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <TextField fx:id="searchEventField" promptText="Rechercher un événement" layoutX="20.0" layoutY="20.0" onKeyReleased="#searchEvents" />
+            <ComboBox fx:id="sortByComboBox" promptText="Trier par..." prefWidth="150.0" onAction="#sortEvents"/>
+            <ComboBox fx:id="sortOrderComboBox" promptText="Ordre" prefWidth="150.0" onAction="#sortEvents"/>
+        </HBox>
+        <ScrollPane layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1280.0" styleClass="card-container">
+            <FlowPane fx:id="eventCardsContainer" hgap="10" vgap="10" style="-fx-padding: 10;">
+                <!-- Event cards will be added here dynamically -->
+            </FlowPane>
+        </ScrollPane>
+
+        <!-- Form container for creating and updating events -->
+        <StackPane fx:id="formContainer" visible="false" prefHeight="830.0">
+            <!-- Add Event Form -->
+            <VBox fx:id="addEventForm" visible="false" spacing="10" styleClass="form-container">
+                <TextField fx:id="titreEvent" promptText="Titre" />
+                <Text fx:id="titreError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <TextField fx:id="descriptionEvent" promptText="Description" />
+                <Text fx:id="descriptionError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <DatePicker fx:id="dateDebutPicker" promptText="Date début" />
+                <Text fx:id="dateDebutError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <DatePicker fx:id="dateFinPicker" promptText="Date fin" />
+                <Text fx:id="dateFinError" style="-fx-fill: red; -fx-font-size: 12px;" />
+
+                <!-- Image selection for first image -->
+                <HBox spacing="10">
+                    <ComboBox fx:id="image1TypeComboBox" promptText="Type d'image" prefWidth="150"/>
+                    <Text fx:id="imageError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                    <TextField fx:id="image1Event" promptText="Image URL" />
+                    <Button fx:id="selectImage1Button" text="Sélectionner" onAction="#selectImage1File"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Button text="Créer" onAction="#createEvent" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+
+            <!-- Update Event Form -->
+            <VBox fx:id="updateEventForm" visible="false" spacing="10" styleClass="form-container" prefHeight="830.0">
+                <TextField fx:id="updateTitreEvent" promptText="Titre" />
+                <Text fx:id="updateTitreError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <TextField fx:id="updateDescriptionEvent" promptText="Description" />
+                <Text fx:id="updateDescriptionError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <DatePicker fx:id="updateDateDebutPicker" promptText="Date début" />
+                <Text fx:id="updateDateDebutError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                <DatePicker fx:id="updateDateFinPicker" promptText="Date fin" />
+                <Text fx:id="updateDateFinError" style="-fx-fill: red; -fx-font-size: 12px;" />
+
+                <!-- Image selection for first image in update form -->
+                <HBox spacing="10">
+                    <ComboBox fx:id="updateImage1TypeComboBox" promptText="Type d'image" prefWidth="150"/>
+                    <Text fx:id="updateImageError" style="-fx-fill: red; -fx-font-size: 12px;" />
+                    <TextField fx:id="updateImage1Event" promptText="Image URL" />
+                    <Button fx:id="updateSelectImage1Button" text="Sélectionner" onAction="#updateSelectImage1File"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Button text="Modifier" onAction="#updateEvent" styleClass="primary-button" />
+                    <Button text="Annuler" onAction="#hideForms" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>

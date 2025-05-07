@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.abircode.cruddp.Controller.ModifierReplyController"
+      spacing="20"
+      alignment="CENTER"
+      style="-fx-padding: 25; -fx-background-color: #f8f6ff;"
+      prefWidth="600">
+
+    <Label text="MODIFIER LA RÉPONSE"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #b11d85; -fx-effect: dropshadow(gaussian, #7c4dff, 2, 0, 0, 2);">
+        <padding><Insets bottom="15"/></padding>
+    </Label>
+
+    <TextArea fx:id="contenuReplyField"
+              promptText="Contenu de la réponse..."
+              wrapText="true"
+              style="-fx-pref-height: 200; -fx-background-color: #f8f6ff; -fx-border-color: #b11d85; -fx-border-width: 2; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-font-size: 14px; -fx-padding: 10;"/>
+
+    <!-- Zone d'affichage des messages d'erreur -->
+    <Text fx:id="contenuReplyError"
+          style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-fill: #f44336;" />
+
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Button text="Annuler"
+                onAction="#handleCancel"
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12px; -fx-cursor: hand;"
+                prefWidth="120" prefHeight="38"/>
+        <Button text="Enregistrer"
+                onAction="#handleSave"
+                style="-fx-background-color: #b11d85; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, #b11d85, 6, 0, 0, 2);"
+                prefWidth="120" prefHeight="38"/>
+    </HBox>
+</VBox>

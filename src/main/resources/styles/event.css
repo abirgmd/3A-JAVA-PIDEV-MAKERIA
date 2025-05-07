@@ -1,0 +1,100 @@
+.forum-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+}
+
+.section {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.subsection-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666666;
+    -fx-padding: 10 0 5 0;
+}
+
+.text-field, .text-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #b11d85;
+}
+
+.text-field.invalid, .text-area.invalid {
+    -fx-border-color: #ff0000;
+}
+
+.text-field.valid, .text-area.valid {
+    -fx-border-color: #00ff00;
+}
+
+.btn-primary {
+    -fx-background-color: #b11d85;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 3;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #8f1668;
+}
+
+.btn-secondary {
+    -fx-background-color: #0A2647;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 3;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #081c35;
+}
+
+.btn-danger {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 3;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c82333;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 3;
+}
+
+.list-view .list-cell {
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #e6e6e6;
+}
+
+.error-label {
+    -fx-text-fill: #dc3545;
+    -fx-font-size: 14px;
+    -fx-padding: 10 0;
+} 
